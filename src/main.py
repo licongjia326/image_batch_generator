@@ -16,7 +16,17 @@ def load_templates(template_dir):
             templates.append(Image.open(os.path.join(template_dir, filename)))
     return templates
 
-def batch_generate_images(excel_file_path, template_dir, output_directory, font_path=None):
+def batch_generate_images(excel_file_path, template_dir, output_directory, font_path=None, title_font_size=40, content_font_size=20):
+    """
+    批量生成图片，分别添加标题和内容。
+
+    :param excel_file_path: Excel文件路径
+    :param template_dir: 模板目录路径
+    :param output_directory: 输出目录路径
+    :param font_path: 字体文件路径
+    :param title_font_size: 标题字体大小
+    :param content_font_size: 内容字体大小
+    """
     data = read_excel_file(excel_file_path)
     templates = load_templates(template_dir)
 
@@ -25,8 +35,8 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
 
     # 加载字体
     try:
-        title_font = ImageFont.truetype(font_path, 40) if font_path else ImageFont.load_default()
-        content_font = ImageFont.truetype(font_path, 20) if font_path else ImageFont.load_default()
+        title_font = ImageFont.truetype(font_path, title_font_size) if font_path else ImageFont.load_default()
+        content_font = ImageFont.truetype(font_path, content_font_size) if font_path else ImageFont.load_default()
     except OSError:
         print(f"Cannot open font resource: {font_path}. Using default font.")
         title_font = ImageFont.load_default()
@@ -64,9 +74,10 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
             print(f"Generated content image: {content_output_path}")
 
 if __name__ == "__main__":
-    excel_file_path = "/Users/qiao/PycharmProjects/image_batch_generator/data/data.xlsx"
-    template_dir = "/Users/qiao/PycharmProjects/image_batch_generator/templates"
-    output_directory = "/Users/qiao/PycharmProjects/image_batch_generator/images/output"
-    font_path = "/Users/qiao/PycharmProjects/image_batch_generator/font/江西拙楷2.0.ttf"
+    excel_file_path = "data/data.xlsx"  # 确保路径正确
+    template_dir = "templates"  # 确保路径正确
+    output_directory = "images/output"  # 确保路径正确
+    font_path = "font/江西拙楷2.0.ttf"  # 确保路径正确
 
-    batch_generate_images(excel_file_path, template_dir, output_directory, font_path)
+    # 调用函数时可以手动设置标题和内容的字体大小
+    batch_generate_images(excel_file_path, template_dir, output_directory, font_path, title_font_size=100, content_font_size=80)

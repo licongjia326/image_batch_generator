@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
+
 def load_image(image_path):
     """
     加载图像模板。
@@ -18,7 +19,7 @@ def calculate_text_position(image_size, text, font, position_type="center"):
     :param text: 要添加的文字
     :param font: 字体对象
     :param position_type: 文字位置类型，默认居中
-    :return: 计算后的文字位置（x, y）
+    :return: 计算后的文字位置（x, y），调整后的字体对象
     """
     draw = ImageDraw.Draw(Image.new("RGB", image_size))
 
@@ -57,6 +58,7 @@ def add_text_to_image(image, text, position, font, font_color="black"):
     draw = ImageDraw.Draw(image)
     draw.text(position, text, font=font, fill=font_color)
     return image
+
 
 def save_image(image, output_path):
     """

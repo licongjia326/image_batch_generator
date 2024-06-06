@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="实现输出不同图片；&#10;优化文字样式">
+    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="动态调整字体大小，目前只有最大限制。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/output/content_序列号内容_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/output/title_序列号内容_0.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/image_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
@@ -102,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717677274245</updated>
       <workItem from="1717677297060" duration="2181000" />
-      <workItem from="1717684811533" duration="2389000" />
+      <workItem from="1717684811533" duration="2735000" />
     </task>
     <task id="LOCAL-00001" summary="little add">
       <option name="closed" value="true" />
@@ -160,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717689668823</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="动态调整字体大小，目前只有最大限制。">
+      <option name="closed" value="true" />
+      <created>1717690259946</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717690259946</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,9 +182,10 @@
     <MESSAGE value="能够实现在图片上添加文字；&#10;文字的大小、位置等样式需要优化。" />
     <MESSAGE value="little change" />
     <MESSAGE value="实现输出不同图片；&#10;优化文字样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现输出不同图片；&#10;优化文字样式" />
+    <MESSAGE value="动态调整字体大小，目前只有最大限制。" />
+    <option name="LAST_COMMIT_MESSAGE" value="动态调整字体大小，目前只有最大限制。" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/image_batch_generator$main.coverage" NAME="main Coverage Results" MODIFIED="1717689620101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/image_batch_generator$main.coverage" NAME="main Coverage Results" MODIFIED="1717690592871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
