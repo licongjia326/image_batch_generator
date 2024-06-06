@@ -3,10 +3,10 @@
     "content_font_size": 80,
     "title_position": {
         "x_percent": 50,
-        "y_percent": 50
+        "y_percent": 40
     },
     "content_position": {
         "x_percent": 50,
-        "y_percent": 50
+        "y_percent": 40
     }
 }
