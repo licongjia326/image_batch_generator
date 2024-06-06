@@ -9,9 +9,10 @@ def load_image(image_path):
     """
     return Image.open(image_path)
 
+
 def calculate_text_position(image_size, text, font, position_type="center"):
     """
-    计算文字在图像上的位置。
+    计算文字在图像上的位置，并动态调整字体大小。
 
     :param image_size: 图像尺寸（宽，高）
     :param text: 要添加的文字
@@ -20,8 +21,18 @@ def calculate_text_position(image_size, text, font, position_type="center"):
     :return: 计算后的文字位置（x, y）
     """
     draw = ImageDraw.Draw(Image.new("RGB", image_size))
+
+    # 动态调整字体大小
+    max_width = image_size[0] * 0.9  # 设定最大宽度为图像宽度的90%
     text_bbox = draw.textbbox((0, 0), text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
+
+    while text_width > max_width:
+        font_size = font.size - 1
+        font = ImageFont.truetype(font.path, font_size)
+        text_bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = text_bbox[2] - text_bbox[0]
+
     text_height = text_bbox[3] - text_bbox[1]
 
     if position_type == "center":
@@ -29,7 +40,8 @@ def calculate_text_position(image_size, text, font, position_type="center"):
     else:
         position = (10, 10)  # 默认左上角
 
-    return position
+    return position, font
+
 
 def add_text_to_image(image, text, position, font, font_color="black"):
     """

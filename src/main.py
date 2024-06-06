@@ -44,8 +44,8 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
             image_size = image.size
 
             # 计算并添加标题
-            title_position = calculate_text_position(image_size, title, title_font, position_type="center")
-            image = add_text_to_image(image, title, title_position, title_font, "black")
+            title_position, adjusted_title_font = calculate_text_position(image_size, title, title_font, position_type="center")
+            image = add_text_to_image(image, title, title_position, adjusted_title_font, "black")
 
             # 保存标题图片
             title_output_path = os.path.join(output_directory, f"title_{sequence_number}_{template_index}.png")
@@ -55,8 +55,8 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
             # 生成内容图片
             image = template.copy()
             for i, content in enumerate(contents):
-                content_position = calculate_text_position(image_size, content, content_font, position_type="center")
-                image = add_text_to_image(image, content, content_position, content_font, "black")
+                content_position, adjusted_content_font = calculate_text_position(image_size, content, content_font, position_type="center")
+                image = add_text_to_image(image, content, content_position, adjusted_content_font, "black")
 
             # 保存内容图片
             content_output_path = os.path.join(output_directory, f"content_{sequence_number}_{template_index}.png")
