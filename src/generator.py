@@ -81,18 +81,16 @@ class ImageBatchGenerator:
                 int(image_size[1] * (self.config['title_position']['y_percent'] / 100))
             )
             font = self.title_font
+            output_filename = f"{sequence_number}_{text[:10]}.png"
         else:
             position = (
                 int(image_size[0] * (self.config['content_position']['x_percent'] / 100)),
                 int(image_size[1] * (self.config['content_position']['y_percent'] / 100))
             )
             font = self.content_font
+            output_filename = f"{sequence_number}_内容{content_index+1}.png"
 
         image = add_text_to_image(image, text, position, font, "black")
-        output_filename = f"{text_type}_{sequence_number}_{template_index}"
-        if text_type == 'content':
-            output_filename += f"_{content_index}"
-        output_filename += ".png"
         output_path = os.path.join(output_directory, output_filename)
         save_image(image, output_path)
         print(f"Generated {text_type} image: {output_path}")
