@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/image_batch_generator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/output/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_data_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_gui_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_image_processing.py" afterDir="false" />
-    </list>
+    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="little add" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,8 +95,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717677274245</updated>
-      <workItem from="1717677297060" duration="770000" />
+      <workItem from="1717677297060" duration="1013000" />
     </task>
+    <task id="LOCAL-00001" summary="little add">
+      <option name="closed" value="true" />
+      <created>1717678427684</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717678427684</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,5 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="little add" />
+    <option name="LAST_COMMIT_MESSAGE" value="little add" />
   </component>
 </project>
