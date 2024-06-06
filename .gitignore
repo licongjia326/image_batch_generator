@@ -27,3 +27,6 @@ Thumbs.db
 
 # PyCharm
 .idea/
+
+# model
+model_file/
