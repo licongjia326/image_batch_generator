@@ -39,6 +39,7 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
 
         # 每条内容使用不同的背景图片模板
         for template_index, template in enumerate(templates):
+            # 生成标题图片
             image = template.copy()
             image_size = image.size
 
@@ -46,14 +47,21 @@ def batch_generate_images(excel_file_path, template_dir, output_directory, font_
             title_position = calculate_text_position(image_size, title, title_font, position_type="center")
             image = add_text_to_image(image, title, title_position, title_font, "black")
 
-            # 计算并添加内容
+            # 保存标题图片
+            title_output_path = os.path.join(output_directory, f"title_{sequence_number}_{template_index}.png")
+            save_image(image, title_output_path)
+            print(f"Generated title image: {title_output_path}")
+
+            # 生成内容图片
+            image = template.copy()
             for i, content in enumerate(contents):
                 content_position = calculate_text_position(image_size, content, content_font, position_type="center")
                 image = add_text_to_image(image, content, content_position, content_font, "black")
 
-            output_path = os.path.join(output_directory, f"image_{sequence_number}_{template_index}.png")
-            save_image(image, output_path)
-            print(f"Generated image: {output_path}")
+            # 保存内容图片
+            content_output_path = os.path.join(output_directory, f"content_{sequence_number}_{template_index}.png")
+            save_image(image, content_output_path)
+            print(f"Generated content image: {content_output_path}")
 
 if __name__ == "__main__":
     excel_file_path = "/Users/qiao/PycharmProjects/image_batch_generator/data/data.xlsx"
