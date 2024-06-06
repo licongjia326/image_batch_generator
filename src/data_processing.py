@@ -27,8 +27,3 @@ def read_excel_file(file_path):
     return structured_data
 
 
-if __name__ == "__main__":
-    file_path = "path/to/your/excel/file.xlsx"  # 替换为你的Excel文件路径
-    data = read_excel_file(file_path)
-    for entry in data:
-        print(entry)
