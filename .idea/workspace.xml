@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="通过配置文件调整字体大小和位置。&#10;目前已经实现基本功能。" />
+    <list default="true" id="6e179821-4c10-4ff5-9b3e-13c70aeb3e6e" name="Changes" comment="little change">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1717677274245</updated>
       <workItem from="1717677297060" duration="2181000" />
-      <workItem from="1717684811533" duration="4599000" />
+      <workItem from="1717684811533" duration="4727000" />
     </task>
     <task id="LOCAL-00001" summary="little add">
       <option name="closed" value="true" />
@@ -196,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717696428269</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="little change">
+      <option name="closed" value="true" />
+      <created>1717696781778</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717696781778</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,10 +220,10 @@
     <MESSAGE value="实现输出不同图片；&#10;优化文字样式" />
     <MESSAGE value="动态调整字体大小，目前只有最大限制。" />
     <MESSAGE value="增加手动调整字体大小的功能；&#10;继续进行样式优化。" />
-    <MESSAGE value="little change" />
     <MESSAGE value="按照文字的中心位置作为位置参考。" />
     <MESSAGE value="通过配置文件调整字体大小和位置。&#10;目前已经实现基本功能。" />
-    <option name="LAST_COMMIT_MESSAGE" value="通过配置文件调整字体大小和位置。&#10;目前已经实现基本功能。" />
+    <MESSAGE value="little change" />
+    <option name="LAST_COMMIT_MESSAGE" value="little change" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/image_batch_generator$main.coverage" NAME="main Coverage Results" MODIFIED="1717696387984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
