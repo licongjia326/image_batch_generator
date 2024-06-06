@@ -23,7 +23,7 @@
 │   └── main.py
 ├── templates/
 │   └── template.png
-├── .venv/
+
 ```
 
 ## 功能
@@ -40,21 +40,7 @@ pip install -r requirements.txt
 ## 配置文件
 项目使用 config.json 配置文件来调整字体大小和文本位置。
 
-config.json 示例
-json
 
-{
-    "title_font_size": 40,
-    "content_font_size": 20,
-    "title_position": {
-        "x_percent": 50,
-        "y_percent": 10
-    },
-    "content_position": {
-        "x_percent": 50,
-        "y_percent": 50
-    }
-}
 title_font_size：标题文本的字体大小。
 content_font_size：内容文本的字体大小。
 title_position：标题文本在图片中的位置，使用百分比表示。
@@ -72,6 +58,7 @@ y_percent：垂直位置百分比。
 
 python src/main.py
 生成的图片将保存在 images/output 目录中。
+
 ## 项目逻辑
 读取配置文件：加载 config.json 以获取字体大小和文本位置。
 读取Excel数据：使用 data_processing.py 中的函数读取 data/data.xlsx 文件中的数据。
@@ -80,7 +67,7 @@ python src/main.py
 生成带有标题的图片：根据配置文件中的字体大小和位置，将标题添加到背景图片中。
 生成带有内容的图片：根据配置文件中的字体大小和位置，将内容添加到背景图片中。
 保存图片：将生成的图片保存到 images/output 目录中。
-贡献
+## 贡献
 欢迎提交问题和功能请求，或通过提交PR来贡献代码。
 
 ## 许可证
