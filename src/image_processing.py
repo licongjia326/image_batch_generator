@@ -20,7 +20,9 @@ def calculate_text_position(image_size, text, font, position_type="center"):
     :return: 计算后的文字位置（x, y）
     """
     draw = ImageDraw.Draw(Image.new("RGB", image_size))
-    text_width, text_height = draw.textsize(text, font=font)
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
 
     if position_type == "center":
         position = ((image_size[0] - text_width) // 2, (image_size[1] - text_height) // 2)
@@ -29,24 +31,18 @@ def calculate_text_position(image_size, text, font, position_type="center"):
 
     return position
 
-def add_text_to_image(image, text, position, font_path=None, font_size=20, font_color="black"):
+def add_text_to_image(image, text, position, font, font_color="black"):
     """
     在图像上添加文字。
 
     :param image: 图像对象
     :param text: 要添加的文字
     :param position: 文字位置（x, y）
-    :param font_path: 字体文件路径
-    :param font_size: 字体大小
+    :param font: 字体对象
     :param font_color: 字体颜色
     :return: 添加文字后的图像对象
     """
     draw = ImageDraw.Draw(image)
-    if font_path:
-        font = ImageFont.truetype(font_path, font_size)
-    else:
-        font = ImageFont.load_default()
-
     draw.text(position, text, font=font, fill=font_color)
     return image
 

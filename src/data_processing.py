@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def read_excel_file(file_path):
     """
     读取Excel文件，并返回处理后的数据。
@@ -10,9 +9,15 @@ def read_excel_file(file_path):
     """
     df = pd.read_excel(file_path)
 
+    # 打印列名
+    print("列名:", df.columns)
+
     # 数据验证与清洗
     df = df.dropna(subset=['序列号', '标题'])  # 删除序列号和标题为空的行
     df = df.reset_index(drop=True)  # 重置索引
+
+    # 动态检测内容列
+    content_columns = [col for col in df.columns if col.startswith('内容')]
 
     # 数据结构化
     structured_data = []
@@ -20,7 +25,7 @@ def read_excel_file(file_path):
         entry = {
             '序列号': row['序列号'],
             '标题': row['标题'],
-            '内容': [row[f'内容{i}'] for i in range(1, 7) if pd.notna(row[f'内容{i}'])]  # 获取非空内容
+            '内容': [row[col] for col in content_columns if pd.notna(row[col])]  # 获取非空内容
         }
         structured_data.append(entry)
 
