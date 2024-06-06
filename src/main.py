@@ -1,7 +1,7 @@
 from data_processing import read_excel_file
 from image_processing import load_image, calculate_text_position, add_text_to_image, save_image
 import os
-
+from PIL import Image, ImageDraw, ImageFont
 
 def batch_generate_images(excel_file_path, image_template_path, output_directory, font_path=None):
     data = read_excel_file(excel_file_path)

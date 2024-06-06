@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
 
-
 def load_image(image_path):
     """
     加载图像模板。
@@ -9,7 +8,6 @@ def load_image(image_path):
     :return: 图像对象
     """
     return Image.open(image_path)
-
 
 def calculate_text_position(image_size, text, font, position_type="center"):
     """
@@ -30,7 +28,6 @@ def calculate_text_position(image_size, text, font, position_type="center"):
         position = (10, 10)  # 默认左上角
 
     return position
-
 
 def add_text_to_image(image, text, position, font_path=None, font_size=20, font_color="black"):
     """
@@ -53,7 +50,6 @@ def add_text_to_image(image, text, position, font_path=None, font_size=20, font_
     draw.text(position, text, font=font, fill=font_color)
     return image
 
-
 def save_image(image, output_path):
     """
     保存生成的图像。
@@ -62,27 +58,3 @@ def save_image(image, output_path):
     :param output_path: 保存路径
     """
     image.save(output_path)
-
-
-if __name__ == "__main__":
-    image_path = "path/to/template.png"  # 替换为你的图像模板路径
-    output_path = "path/to/output.png"  # 替换为保存图像的路径
-    text = "Hello, World!"
-    position = (50, 50)
-    font_path = "path/to/font.ttf"  # 可选：替换为你的字体文件路径
-
-    # 加载图像
-    image = load_image(image_path)
-
-    # 计算文字位置
-    image_size = image.size
-    calculated_position = calculate_text_position(image_size, text, ImageFont.truetype(font_path,
-                                                                                       20) if font_path else ImageFont.load_default(),
-                                                  position_type="center")
-
-    # 添加文字
-    image_with_text = add_text_to_image(image, text, calculated_position, font_path, 20, "black")
-
-    # 保存图像
-    save_image(image_with_text, output_path)
-    print(f"Image saved at: {output_path}")
