@@ -37,7 +37,10 @@ def calculate_text_position(image_size, text, font, position_type="center"):
     text_height = text_bbox[3] - text_bbox[1]
 
     if position_type == "center":
-        position = ((image_size[0] - text_width) // 2, (image_size[1] - text_height) // 2)
+        position = (
+            (image_size[0] - text_width) // 2,
+            (image_size[1] - text_height) // 2
+        )
     else:
         position = (10, 10)  # 默认左上角
 
@@ -46,17 +49,26 @@ def calculate_text_position(image_size, text, font, position_type="center"):
 
 def add_text_to_image(image, text, position, font, font_color="black"):
     """
-    在图像上添加文字。
+    在图像上添加文字，并确保文字居中。
 
     :param image: 图像对象
     :param text: 要添加的文字
-    :param position: 文字位置（x, y）
+    :param position: 文字位置（x, y），实际是文字的中心点位置
     :param font: 字体对象
     :param font_color: 字体颜色
     :return: 添加文字后的图像对象
     """
     draw = ImageDraw.Draw(image)
-    draw.text(position, text, font=font, fill=font_color)
+
+    # 计算文字的宽度和高度
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
+
+    # 调整位置，使其居中
+    adjusted_position = (position[0] - text_width // 2, position[1] - text_height // 2)
+
+    draw.text(adjusted_position, text, font=font, fill=font_color)
     return image
 
 

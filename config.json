@@ -1,0 +1,12 @@
+{
+    "title_font_size": 140,
+    "content_font_size": 80,
+    "title_position": {
+        "x_percent": 50,
+        "y_percent": 50
+    },
+    "content_position": {
+        "x_percent": 50,
+        "y_percent": 50
+    }
+}
